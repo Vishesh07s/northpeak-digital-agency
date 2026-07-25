@@ -1,40 +1,62 @@
-# NorthPeak Digital - Task B: Optimization Changelog
+# NorthPeak Digital – Task B: Optimization Changelog
 
-**Target Requirements:** Lighthouse 90+ Score in Performance & Accessibility  
-**Repository:** [Public GitHub Repo Link]  
-**Live Demo:** [Vercel / Netlify Live URL]
+## Project Links
 
----
-
-## ⚡ 1. Performance Optimizations & Impact
-
-| Optimization Technique | Implementation Detail | Performance Benefit |
-| :--- | :--- | :--- |
-| **Zero Heavy Framework Footprint** | Built using pure Vanilla HTML5, CSS3, and ES6 JavaScript instead of heavy bundlers or multi-megabyte frameworks. | Reduced total page payload size to **< 50KB** (sub-second load time). |
-| **Deferred Script Execution** | Added `defer` attribute to `<script src="script.js" defer></script>`. | Prevents render-blocking JavaScript execution during HTML parsing. |
-| **Inline Vector Graphics (SVG)** | Replaced external icon font files (e.g. FontAwesome) with optimized inline SVG code. | Eliminates extra HTTP network requests and font file loading latency. |
-| **Google Font Preconnection** | Implemented `<link rel="preconnect" href="https://fonts.gstatic.com">`. | Pre-establishes DNS, TCP, and TLS connections to Google Fonts servers (~120ms latency saved). |
-| **Hardware Accelerated Animations** | Replaced `margin`/`top` CSS animations with GPU-composited `transform: translateY()`. | Eliminates browser layout reflows and guarantees 60fps smooth scrolling. |
+- **Repository:** [GitHub Repository]
+- **Live Demo:** [Vercel / Netlify URL]
 
 ---
 
-## ♿ 2. Accessibility (WCAG 2.1) Optimizations
+# Performance Optimizations
 
-| Accessibility Feature | Implementation Detail | Accessibility Impact |
-| :--- | :--- | :--- |
-| **Semantic HTML5 Hierarchy** | Utilized `<header>`, `<nav>`, `<main>`, `<section>`, `<article>`, and `<footer>` tags with strict `<h1>` ➔ `<h2>` ➔ `<h3>` heading tree. | Screen readers can seamlessly parse and navigate document sections. |
-| **High Contrast Ratio (WCAG AAA)** | Off-white `#FBFBFD` background with deep obsidian `#0F172A` body copy. | Achieves a **21:1 contrast ratio**, exceeding WCAG AAA standards. |
-| **Accessible Form Controls** | Explicit `<label for="...">` tags mapped to each input, with `aria-live="polite"` feedback alerts. | Visually impaired users receive real-time screen reader announcements for form errors. |
-| **Interactive Tap Targets** | All CTA buttons set to a minimum `48px` height with explicit `aria-label` on mobile menu toggles. | Fully accessible for touchscreen mobile fingers and keyboard tab navigation. |
+| Optimization | What I Implemented | Why It Helps |
+|---------------|--------------------|--------------|
+| Vanilla HTML, CSS & JavaScript | Built the project without any frontend framework. | Keeps the website lightweight and reduces unnecessary JavaScript. |
+| Deferred JavaScript | Added the `defer` attribute to the main JavaScript file. | Allows HTML to load first and prevents render-blocking scripts. |
+| Inline SVG Icons | Used inline SVG icons instead of icon libraries. | Reduces external requests and keeps icons sharp on all screen sizes. |
+| Font Preconnect | Added preconnect links for Google Fonts. | Helps the browser establish the connection earlier, improving font loading. |
+| Optimized CSS Animations | Used `transform` and `opacity` for hover animations instead of layout-changing properties. | Results in smoother animations with fewer layout recalculations. |
 
 ---
 
-## 📹 3. Loom Video Walkthrough Script (3 Min Presentation)
+# Accessibility Improvements
 
-### **Details I am Proud Of:**
-1. **Custom JavaScript Client-Side Validation:** Form validation engineered from scratch without external libraries, featuring real-time Regex email matching and dynamic accessibility feedback.
-2. **Swiss Editorial Design System:** High-contrast typography hierarchy (`Plus Jakarta Sans`), subtle 2.5-degree UI dashboard mockup, and zero visual clutter.
-3. **Sub-second Performance & 100/100 Lighthouse Benchmark:** Built entirely with semantic HTML5 and clean CSS variables for maximum speed.
+| Feature | Implementation | Benefit |
+|----------|----------------|---------|
+| Semantic HTML | Used `<header>`, `<nav>`, `<main>`, `<section>`, `<article>`, and `<footer>` where appropriate. | Improves document structure for screen readers and search engines. |
+| Proper Heading Structure | Maintained a logical heading hierarchy (`h1 → h2 → h3`). | Makes navigation easier for assistive technologies. |
+| Accessible Forms | Connected every input with its corresponding `<label>` and added clear validation messages. | Improves usability for keyboard and screen-reader users. |
+| Mobile Friendly Controls | Buttons and interactive elements use comfortable touch target sizes. | Improves usability on mobile devices. |
+| Color Contrast | Selected colors with good contrast between text and background. | Improves readability and accessibility. |
 
-### **1 Thing I Would Do Differently:**
-* If expanding to a multi-page enterprise portal, I would implement **Netlify Serverless Functions** or an **Express.js backend endpoint** to store contact form submissions in a Supabase/PostgreSQL database.
+---
+
+# Design Decisions
+
+### Things I'm Proud Of
+
+### 1. Clean Component Structure
+The project is divided into reusable sections such as Navbar, Hero, Services, Pricing, Contact, and Footer. Utility classes were used to avoid repeating CSS.
+
+### 2. Performance-Focused Approach
+Instead of adding unnecessary libraries, I kept the project lightweight using semantic HTML, modern CSS, and vanilla JavaScript.
+
+### 3. Responsive Layout
+The website was designed to work across desktop, tablet, and mobile screens using Flexbox, CSS Grid, and responsive spacing.
+
+---
+
+# If I Had More Time
+
+I would enhance the project by:
+
+- Adding subtle scroll and reveal animations.
+- Replacing the hero dashboard placeholder with a richer interactive dashboard illustration.
+- Connecting the contact form to a backend (Express.js or Serverless Functions) and storing submissions in a database such as PostgreSQL or Supabase.
+- Improving the dashboard mockup with more realistic analytics and data visualizations.
+
+---
+
+# Lighthouse Goal
+
+The project was built with the goal of achieving a Lighthouse score of **90+** in Performance and Accessibility by focusing on semantic HTML, lightweight assets, responsive design, and clean CSS.
