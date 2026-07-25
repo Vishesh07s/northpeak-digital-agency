@@ -2,8 +2,9 @@
 
 ## Project Links
 
-- **Repository:** [GitHub Repository]
-- **Live Demo:** [Vercel / Netlify URL]
+- **Repository:** https://github.com/Vishesh07s/northpeak-digital-agency
+- **Live Demo:** https://heroic-khapse-afc2f5.netlify.app/
+- **Loom Video:** https://www.loom.com/share/bbfa9ffff84543ca9d5e457035d79674
 
 ---
 
